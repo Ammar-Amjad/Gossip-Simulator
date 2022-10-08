@@ -10,26 +10,31 @@
 -author("Ammar").
 
 %% API
--export([run/3]).
+-export([run/1, supervisor/1]).
 
+supervisor(0) ->
+    io:fwrite("~p Terminating Receiver ~n", [self()]),
+    "all rumors are received";
+supervisor(NumNodes) -> 
+    receive
+        {a2s, Msg} ->
+            io:fwrite("~p~n", [Msg]),
+            supervisor(NumNodes - 1)
+    end.
 
-run(NumNodes, Algorithm, Topology) ->
-    io:format("~p",[self()]).
-%     case Algorithm of
-%     "gossip" ->
-%       case Topology of
-%         "full" -> done;
-%         "2D" -> done;
-%         "line" -> done;
-%         "Imp2D" -> done
-%       end;
+gossip2D(NumNodes) -> 
+    .
 
-%     "push-sum" ->
-%       case Topology of
-%         "full" -> done;
-%         "2D" -> done;
-%         "line" -> done;
-%         "Imp2D" -> done
-%       end
+run(NumNodes) ->
+    Algorithm = "gossip",
+    Topology = "2D",
 
-%   end.
+    case Algorithm of
+    "gossip" ->
+        case Topology of
+            "full" -> done;
+            "2D" -> gossip2D;
+            "line" -> done;
+            "Imp2D" -> done
+        end
+    end.
