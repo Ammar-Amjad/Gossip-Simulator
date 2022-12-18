@@ -18,40 +18,64 @@ Push-Sum:
 - line: 2000 Nodes in 2744 sec
 
 # Exection Instructions:
+
 Enter Erlang envoirment in terminal using command:
+
 -> erl
 
 File: Project2.erl
+
 -> c(project2).
 
 # Instructions for Gossip: 
+
 Here replace 10 with any number of nodes.
+
 -> project2:run(10, "2D", "gossip"). 
+
 -> project2:run(10, "full", "gossip"). 
+
 -> project2:run(10, "Imp3D", "gossip").
+
 -> project2:run(10, "line", "gossip").  
 
 # Instructions for Push-Sum:
+
 -> project2:run(10, "2D", "push-sum"). 
+
 -> project2:run(10, "full", "push-sum"). 
+
 -> project2:run(10, "Imp3D", "push-sum"). 
+
 -> project2:run(10, "line", "push-sum").
 
 File: Project2.erl
 # Instructions for Gossip with 20% Dropout:
+
 -> project2bonus:run(10, "2D", "gossip", 20).
+
 -> project2bonus:run(10, "full", "gossip", 20). 
+
 -> project2bonus:run(10, "Imp3D", "gossip", 20). 
+
 -> project2bonus:run(10, "line", "gossip", 20).
 
 # Instructions for Gossip with 50% Dropout:
+
 -> project2bonus:run(10, "2D", "gossip", 50). 
+
 -> project2bonus:run(10, "full", "gossip", 50).
+
 -> project2bonus:run(10, "Imp3D", "gossip", 50). 
+
 -> project2bonus:run(10, "line", "gossip", 50). 
 
 # Instructions for Gossip with 80% Dropout:
+
 -> project2bonus:run(10, "2D", "gossip", 80).
+
 -> project2bonus:run(10, "full", "gossip", 80).
+
 -> project2bonus:run(10, "Imp3D", "gossip", 80).
+
 -> project2bonus:run(10, "line", "gossip", 80).
